@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="description" content="Hello Hospital is a leading medical facility committed to providing exceptional healthcare services with a team of skilled doctors, innovative treatments, and compassionate care. Explore our departments, doctors, and book appointments online.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Hospital Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Your custom CSS file -->
+    <link rel="icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!--calling the header -->
+    <div id="header-container"></div>
+    
+<section class="booking-section">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Book an Appointment</h2>
+                        <form id="bookingForm" onsubmit="return validateBookingForm()" action="booking_success.html">
+                            <div class="form-group text-center">
+                                <input type="text" id="fullName" name="fullName" class="form-control " placeholder="Enter your Full Name">
+                                <div class="error-message" id="fullNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your Email Address">
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your 10 digit Phone Number">
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" id="appointmentDate" name="appointmentDate" class="form-control" placeholder="Select your Appointment Date">
+                                <div class="error-message" id="appointmentDateError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <select id="doctor" name="doctor" class="form-control">
+                                    <option value="" disabled selected>Select Doctor</option>
+                                    <option value="drManu">Dr. Manu (Cardiology)</option>
+                                    <option value="drDhwani">Dr. Dhwani (Cardiology)</option>
+                                    <option value="drSalman">Dr. Salman (Orthopedics)</option>
+                                    <option value="drAmrutha">Dr. Amrutha (Orthopedics)</option>
+                                    <option value="drAnoop">Dr. Anoop (Neurology)</option>
+                                    <option value="drAnitha">Dr. Anitha (Neurology)</option>
+                                </select>
+                                <div class="error-message" id="doctorError"></div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>     
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <div id="footer-container"></div>
+    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

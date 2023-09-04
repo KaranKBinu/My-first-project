@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="description" content="Hello Hospital is a leading medical facility committed to providing exceptional healthcare services with a team of skilled doctors, innovative treatments, and compassionate care. Explore our departments, doctors, and book appointments online.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Hospital Contact page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Your custom CSS file -->
+    <link rel="icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!--calling the header -->
+    <div id="header-container"></div>
+
+
+     <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                    <h2 class="card-title text-center">Contact Us</h2>
+                    <div class="success-message" id="successMessage"></div>
+                    <form id="contactForm" onsubmit="return validateContactForm()" method="post">
+                        <div class="form-group">
+                            
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your Name">
+                            <div class="error-message" id="fullNameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your Email">
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Enter your Message"></textarea>
+                            <div class="error-message" id="messageError"></div>
+                            <div class="col-md-8 offset-md-2 text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+
+                        </div>
+
+                        
+                    </form>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Success Message -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Thank you for contacting us! Your message has been sent.
+                    <p style="font-size: 14px;">This page will automatically close in <span id="countdown" style="color: red;">15 seconds</span>. Or you can press the <b>Close</b> button</b></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="closeModalBtn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

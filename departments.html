@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="description" content="Hello Hospital is a leading medical facility committed to providing exceptional healthcare services with a team of skilled doctors, innovative treatments, and compassionate care. Explore our departments, doctors, and book appointments online.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Hospital Departments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Your custom CSS file -->
+    <link rel="icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!--calling the header -->
+    <div id="header-container"></div>
+
+
+    <section class="carousel-section">
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/doctor1.jpg" class="d-block w-100" alt="Carousel Image 1">
+                    <div class="carousel-caption">
+                        <h3>Welcome to Our Departments Page</h3>
+                        <p>Your health is our priority. We provide top-notch medical services.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/doctor2.webp" class="d-block w-100" alt="Carousel Image 2">
+                    <div class="carousel-caption">
+                        <h3>Expert Doctors</h3>
+                        <p>Our experienced doctors are here to provide you with the best care.</p>
+                    </div>
+                </div>
+                <!-- Add more carousel items as needed -->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments-section text-center">
+        <div class="container">
+            <h2>Our Departments</h2>
+            <div class="row">
+                <!-- Loop through department data -->
+                <script>
+                    const departments = [
+                        {
+                            name: "Cardiology",
+                            note: "Cardiology is a branch of medicine that deals with disorders of the heart...",
+                            description:"Department Description :</strong>Cardiology is a branch of medicine that deals with disorders of the heart and the cardiovascular system. The field includes medical diagnosis and treatment of congenital heart defects, coronary artery disease, heart failure, valvular heart disease, and electrophysiology.",
+                            doctors: ["Dr. Manu", "Dr. Dhwani"],
+                            image: "images/department1.webp"
+                        },
+                        {
+                            name: "Orthopedics",
+                            note:"The department provides management related to disorders of bone...",
+                            description: "The department provides management related to disorders of bone, joint and a variety of musculoskeletal disorders. Orthopedic doctors (sometimes also called orthopaedic doctors or orthopaedic surgeons) at Narayana Hospital Orthopedic focuse on caring for your bones, joints, ligaments, nerves, and tendons.",
+                            doctors: ["Dr. Salman", "Dr. Amrutha"],
+                            image: "images/department2.webp"
+                        },
+                        {
+                            name: "Neurology",
+                            note:"Neurology is the branch of medicine concerned with the study and treatment...",
+                            description: "Neurology is the branch of medicine concerned with the study and treatment of disorders of the nervous system. The nervous system is a complex, sophisticated system that regulates and coordinates body activities.",
+                            doctors: ["Dr. Anoop", "Dr. Anitha"],
+                            image: "images/department3.jpg"
+                        }
+                    ];
+
+                    for (let i = 0; i < departments.length; i++) {
+                        const department = departments[i];
+                        const modalId = `${department.name.toLowerCase()}Modal`;
+
+                        document.write(`
+                            <div class="col-md-4">
+                                <div class="department-box" data-toggle="modal" data-target="#${modalId}">
+                                    <img src="${department.image}" alt="${department.name} Department" class="img-fluid">
+                                    <h3>${department.name}</h3>
+                                    <p>${department.note}</p>
+                                </div>
+                            </div>
+                        `);
+
+                        document.write(`
+                            <div class="modal fade" id="${modalId}" tabindex="-1" role="dialog" aria-labelledby="${modalId}Label"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="${modalId}Label">${department.name} Department</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><strong>Department Description :</strong>${department.description}</p>
+                                            <p><strong>Doctors :</strong>${department.doctors.join(', ')}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+
+<div id="footer-container"></div>
+    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
